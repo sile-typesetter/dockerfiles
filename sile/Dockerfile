@@ -12,6 +12,9 @@ LABEL org.siletypesetter.version "$sile_commit"
 ADD _utils/setup_yay.sh /usr/local/bin/setup_yay.sh
 RUN setup_yay.sh
 
+ADD _utils/setup_sile.sh /usr/local/bin/setup_sile.sh
+RUN setup_sile.sh
+
 # RUN yay --clean
 # RUN yay -Rns yay
 
