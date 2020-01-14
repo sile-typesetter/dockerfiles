@@ -6,6 +6,15 @@
 
 To just render documents.
 
+```sh
+# Until this is pushed to Docker Hub, you have to make the image yourself
+make sile
+
+# Pass SILE an input document and get the PDF back
+echo "<sile>test file</sile>" > input.xml
+docker run --volume "$(pwd):/data --user $(id -u):$(id -g) siletypesetter/sile:v0.10.0 input.xml
+```
+
 ## Full CaSILE
 
 [siletypesetter/casile][hub.casile]
