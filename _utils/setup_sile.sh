@@ -1,6 +1,14 @@
 #!/usr/bin/env bash
 set -e -o pipefail
 
-su docker -c 'yay --needed --noconfirm -S sile'
+/usr/local/bin/setup_yay.sh
 
-# pacman -Rns <sile build deps> + --clean
+case $1 in
+    v*) pkg=sile ;;
+    master) pkg=sile-git ;;
+    *) exit 1 ;;
+esac
+
+su docker -c "yay --needed --noconfirm -S $pkg"
+
+/usr/local/bin/teardown_yay.sh
