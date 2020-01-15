@@ -4,7 +4,7 @@ set -e -o pipefail
 /usr/local/bin/setup_yay.sh
 
 case $1 in
-    v*) pkg=sile ;;
+    v*|latest) pkg=sile ;;
     master) pkg=sile-git ;;
     *) exit 1 ;;
 esac

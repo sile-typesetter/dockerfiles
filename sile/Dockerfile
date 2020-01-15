@@ -1,10 +1,10 @@
 FROM archlinux AS archlinux-sile
-ARG sile_commit=v0.10.0
+ARG sile_tag=v0.10.0
 
 LABEL maintainer 'Caleb Maclennan <caleb@alerque.com>'
 LABEL org.siletypesetter.maintainer 'Caleb Maclennan <caleb@alerque.com>'
 LABEL org.siletypesetter.author 'Caleb Maclennan <caleb@alerque.com>'
-LABEL org.siletypesetter.version "$sile_commit"
+LABEL org.siletypesetter.version "$sile_tag"
 
 RUN pacman --needed --noconfirm -Syuq && yes | pacman -Sccq
 
