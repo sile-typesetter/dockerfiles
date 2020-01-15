@@ -15,8 +15,7 @@ RUN setup_yay.sh
 ADD _utils/setup_sile.sh /usr/local/bin/setup_sile.sh
 RUN setup_sile.sh
 
-# RUN yay --clean
-# RUN yay -Rns yay
+RUN yay --noconfirm -Yc && pacman --noconfirm -Rns yay
 
 COPY sile/docker-entrypoint.sh /usr/local/bin
 
