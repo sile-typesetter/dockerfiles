@@ -14,8 +14,8 @@ makefile_dir := $(dir $(realpath Makefile))
 .PRECIOUS:
 .DELETE_ON_ERROR:
 
-SILE_VERSION ?= latest
-CASILE_VERSION ?= master
+SILE_TAG ?= latest
+CASILE_TAG ?= master
 
 default: sile
 
@@ -24,12 +24,12 @@ all: sile casile
 .PHONY: sile
 sile:
 	docker build \
-		--tag siletypesetter/sile:$(SILE_VERSION) \
-		--build-arg sile_tag=$(SILE_VERSION) \
+		--tag siletypesetter/sile:$(SILE_TAG) \
+		--build-arg sile_tag=$(SILE_TAG) \
 		-f $(makefile_dir)/sile/Dockerfile $(makefile_dir)
 
 .PHONY: casile
 casile:
 	docker build \
-		--tag siletypesetter/casile:$(CASILE_VERSION) \
+		--tag siletypesetter/casile:$(CASILE_TAG) \
 		-f $(makefile_dir)/casile/Dockerfile $(makefile_dir)
