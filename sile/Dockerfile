@@ -11,7 +11,7 @@ RUN pacman --needed --noconfirm -Syuq && yes | pacman -Sccq
 ADD _utils/setup_yay.sh /usr/local/bin/setup_yay.sh
 ADD _utils/teardown_yay.sh /usr/local/bin/teardown_yay.sh
 ADD _utils/setup_sile.sh /usr/local/bin/setup_sile.sh
-RUN setup_sile.sh $sile_commit
+RUN setup_sile.sh $sile_tag
 
 COPY sile/docker-entrypoint.sh /usr/local/bin
 
