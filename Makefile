@@ -33,3 +33,6 @@ casile:
 	docker build \
 		--tag siletypesetter/casile:$(CASILE_TAG) \
 		-f $(makefile_dir)/casile/Dockerfile $(makefile_dir)
+
+push: sile
+	docker push siletypesetter/sile:$(SILE_TAG)
