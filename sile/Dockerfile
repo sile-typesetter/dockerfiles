@@ -1,4 +1,5 @@
-FROM archlinux AS archlinux-sile
+FROM archlinux
+
 ARG sile_tag=v0.10.0
 
 LABEL maintainer='Caleb Maclennan <caleb@alerque.com>'
