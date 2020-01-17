@@ -1,6 +1,6 @@
 FROM archlinux
 
-ARG sile_tag=v0.10.0
+ARG sile_tag=latest
 
 LABEL maintainer='Caleb Maclennan <caleb@alerque.com>'
 LABEL version="$sile_tag"
