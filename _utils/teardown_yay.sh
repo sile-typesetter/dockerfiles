@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -e -o pipefail
+set -e +o pipefail
 
 su docker -c 'yay --noconfirm -Yccq'
 yes | pacman -Sccq
